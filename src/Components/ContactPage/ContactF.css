@@ -1,0 +1,77 @@
+.containerF{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    color: var(--text-primary);
+}
+
+.containerF > .Contact{
+    justify-content: center;
+    align-items: center;
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.anime > .form-input{
+    border: none;
+    font-family: 'Chewy', cursive;
+    outline: none;
+    border-radius: 10px;
+    background-color: var(--paradiv);
+    color: var(--text-primary);
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+:focus{
+    outline: none;
+}
+form > .anime{
+   position: relative;
+   margin: 4px 10px;   
+}
+
+.anime>.form-input ~ .focus-broder{
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color:var(--anime);
+    transition: 0.4s;
+
+}
+
+
+.anime> .form-input:focus ~.focus-broder{
+    width: 100%;
+    transition: 0.4s;
+
+}
+.message_button{
+    display:flex;
+    flex-direction: row;
+}
+
+form > .message_button>.submit-button{
+    font-family: 'Chewy', cursive;
+    color: var(--text-primary);
+    font-size: 20px;
+    height: 40px;
+    width: 100px;
+    cursor: pointer;
+    background-color: var(--paradiv);
+    border: 2px solid var(--anime);
+    margin-left: auto;
+    border-radius: 10px;
+}
+

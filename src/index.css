@@ -1,0 +1,38 @@
+html{
+  scroll-behavior: smooth;
+}
+
+:root {
+  --background:#f0e7db;
+  --text-primary: black;
+  --anime:#c764eb;
+  --paradiv:rgba(245,240,232,0.4);
+}
+[data-theme='dark'] {
+  --background:  #202023;
+  --text-primary: white;
+  --paradiv:rgba(54, 55, 58,0.4);
+  --anime:#64d4eb;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  font-family: 'Chewy', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  color: var(--text-primary);
+  background-color: var(--background);
+  height: 100%;
+  transition: all .2s linear;
+  contain: paint;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+

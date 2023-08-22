@@ -1,0 +1,48 @@
+.Usepro{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.react{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.link{
+    display:flex;
+    align-items: center;
+    border: 2px solid rgb(252, 132, 3);
+    margin: 2px;
+}
+
+.link > a {
+    font-family:Playfair Display;
+    font-size:large;
+    font-weight:bold;
+    color: var(--text-primary);
+}
+
+.link > p{
+    margin-left: 4px;
+    font-size:12px;
+
+}
+.connect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    flex-wrap: wrap;
+}
+.connect a img{
+    object-fit: contain;
+    height: 40px;
+    padding: 7px;
+}
