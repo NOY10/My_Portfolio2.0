@@ -39,25 +39,22 @@ const Work = () => {
         <Animatedpage>
             <div className="work">
                 <h1>Clones</h1>
-                {/* <div className="works"> */}
-                    <motion.div
-                        className="works"
-                        variants={container}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        {projects.map((project,i) => (
-                            <motion.li key={i} variants={item} className='info'>
-                                <h2>{project.title}</h2>
-                                <a href={project.link} target='_SEJ'  rel='noreferrer'>
-                                <img src={project.pic} alt="whatsapp icon"loading="lazy"/>
-                                </a>
-                            </motion.li>
-                        ))}
-                    </motion.div> 
-                </div>
-                
-            {/* </div> */}
+                <motion.div
+                    className="works"
+                    variants={container}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    {projects.map((project,i) => (
+                        <motion.li key={i} variants={item} className='info'>
+                            <h2>{project.title}</h2>
+                            <a href={project.link} target='_SEJ'  rel='noreferrer'>
+                            <img src={project.pic} alt="whatsapp icon"loading="lazy"/>
+                            </a>
+                        </motion.li>
+                    ))}
+                </motion.div> 
+            </div>
         </Animatedpage>
   
     )
