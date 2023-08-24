@@ -1,0 +1,136 @@
+/* 
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 400px;
+    background:red;
+    padding-top: 100px;
+    transform: translateX(-100%);
+    will-change: transform;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  a {
+    color: var(--background);
+    display: block;
+    transform-origin: -20px 50%;
+    font-weight: bold;
+    font-size: 48px;
+    padding: 10px;
+    will-change: transform, opacity, filter;
+  }
+  
+  ul,
+  a {
+    list-style: none;
+    margin: 0;
+  }
+  
+ */
+
+  
+
+ .menu{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.ul a{
+   margin: 5px;
+   padding: 5px;
+   cursor: pointer;
+   color: var(--text-primary);
+   display: flex;
+   align-items: center;
+   text-decoration: none;
+   padding: 0 1rem;
+   height: 100%;
+   cursor: pointer;
+  
+  }
+  .ul a:hover {
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    color: var(--background);
+    transition: all 0.5s ease-in-out;
+  }
+ 
+  .navMenu .active{
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    color: var(--background);
+   }
+  
+   
+  .header_left{
+      display: flex;
+      align-items: center;
+  }
+  .header_left > img{
+      object-fit: contain;
+      height: 40px;
+      padding: 7px;
+      
+  }
+  button {
+    overflow: hidden; 
+    background-color: var(--background-color); 
+    border: none;  
+   
+  }
+  
+    @media screen and (max-width: 768px) {
+      header > .navMenu{
+        flex-direction: column;
+        position: absolute;
+        background-color: var(--background);
+        padding: 10px 15px;
+        right: -40px;
+        top:64px;
+        transition: all 0.5s ease-in-out;
+      }
+  
+      .navMenu a{
+        margin-bottom: 30px;
+        width: 100%;
+        text-align: center;
+        align-items: center;
+      }
+      .menu_icon{
+        display: block;
+        transform: translate(-10%, 10%);
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--text-primary);
+        transition: all 0.2s ease-in-out;
+    }
+      .navMenu.close {
+        right: -100%;
+        transition: all 0.5s ease-in-out;
+        text-align: center;
+      }
+  
+      .header_left{
+      margin-right: auto;
+      }
+      
+    }
+  
+  .icon {
+    color: black;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: var(--anime);
+  
+    
+  }
+  

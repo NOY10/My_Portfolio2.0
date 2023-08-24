@@ -64,6 +64,9 @@ const Header = ({theme,setTheme}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const scope = useMenuAnimation(isOpen);
+    const showMenu= () =>{
+      setIsOpen(!isOpen)
+    }
     
   return (
       <header ref={ref}>
@@ -72,7 +75,13 @@ const Header = ({theme,setTheme}) => {
           <p>Lobzang Yonten</p>
         </div>
 
-        
+        <div className={isOpen ? 'navMenu' : 'navMenu close'} onClick={showMenu}>
+       
+          <NavLink activeclassname="active" to="/Homepage">Home</NavLink>
+          <NavLink activeclassname="active" to="/Works" >Works</NavLink>
+          <NavLink activeclassname="active" to="/Events">Events</NavLink>
+          <NavLink activeclassname="active" to="/ContactMe">Contact Me</NavLink>
+        </div>
         
         <div className='header_right'>
           <AnimatePresence  initial={false} mode="wait">
@@ -94,11 +103,10 @@ const Header = ({theme,setTheme}) => {
             </motion.div>
           </AnimatePresence>
         </div>
-        
-        <div ref={scope}>
-          <Menu />
+
+        <div ref={scope}  class="menu_icon">
           <MenuToggle toggle={() => setIsOpen(!isOpen)} />
-        </div>
+        </div> 
       
       </header>
   )
