@@ -84,8 +84,11 @@ button {
       align-items: center;
     }
     .menu_icon{
-      display: block;
-      transform: translate(-10%, 10%);
+      display: flex;
+      align-items: center;
+      padding: 9px;
+      justify-content: center;
+      border-radius: 99px;
       font-size: 2rem;
       cursor: pointer;
       color: var(--text-primary);

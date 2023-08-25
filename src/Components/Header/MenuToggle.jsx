@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
+import "./Header.css";
 
-function MenuToggle({toggle}) {
-    const Path = (props) => (
-        <path
-          fill="transparent"
-          strokeWidth="3"
-          stroke="red"
-          strokeLinecap="round"
-          {...props}
-        />
-    );
-  return (
-    <button onClick={toggle}>
+const Path = (props) => (
+  <path
+    fill="transparent"
+    strokeWidth="3"
+    stroke="var(--text-primary)"
+    strokeLinecap="round"
+    {...props}
+  />
+);
+
+const MenuToggle = ({ toggle }) => (
+  <button onClick={toggle} className='menu_icon'>
     <svg width="23" height="18" viewBox="0 0 23 18">
       <Path
         d="M 2 2.5 L 20 2.5"
@@ -32,7 +33,6 @@ function MenuToggle({toggle}) {
       />
     </svg>
   </button>
-  )
-}
+);
 
-export default MenuToggle
+export default MenuToggle;

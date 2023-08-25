@@ -1,40 +1,17 @@
 import React, { useRef, useState,useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBars, FaTimes} from 'react-icons/fa';
 import "./Header.css";
 import { AnimatePresence, motion } from 'framer-motion'
 import { BiMoon } from 'react-icons/bi';
 import { BsSun } from 'react-icons/bs';
 import MenuToggle from './MenuToggle';
 import { useAnimate, stagger } from "framer-motion";
-import Menu from './Menu';
+
 
 function useMenuAnimation(isOpen) {
   const [scope, animate] = useAnimate();
 
   useEffect(() => {
-    const menuAnimations = isOpen
-      ? [
-          [
-            "nav",
-            { transform: "translateX(0%)" },
-            { ease: [0.08, 0.65, 0.53, 0.96], duration: 0.6 }
-          ],
-          [
-            "NavLink",
-            { transform: "scale(1)", opacity: 1, filter: "blur(0px)" },
-            { delay: stagger(0.05), at: "-0.1" }
-          ]
-        ]
-      : [
-          [
-            "NavLink",
-            { transform: "scale(0.5)", opacity: 0, filter: "blur(10px)" },
-            { delay: stagger(0.05, { from: "last" }), at: "<" }
-          ],
-          ["nav", { transform: "translateX(-100%)" }, { at: "-0.1" }]
-        ];
-
     animate([
       [
         "path.top",
@@ -46,8 +23,7 @@ function useMenuAnimation(isOpen) {
         "path.bottom",
         { d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346" },
         { at: "<" }
-      ],
-      ...menuAnimations
+      ]
     ]);
   }, [isOpen]);
 
@@ -64,9 +40,26 @@ const Header = ({theme,setTheme}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const scope = useMenuAnimation(isOpen);
+    useEffect(() => {
+      const checkIfClickedOutside = e => {
+        // If the menu is open and the clicked target is not within the menu,
+        // then close the menu
+        if (isOpen && ref.current && !ref.current.contains(e.target)) {
+          setIsOpen(false)
+        }
+      }
+  
+      document.addEventListener("mousedown", checkIfClickedOutside)
+  
+      return () => {
+        // Cleanup the event listener
+        document.removeEventListener("mousedown", checkIfClickedOutside)
+      }
+    }, [isOpen])
     const showMenu= () =>{
       setIsOpen(!isOpen)
     }
+  
     
   return (
       <header ref={ref}>
@@ -76,7 +69,6 @@ const Header = ({theme,setTheme}) => {
         </div>
 
         <div className={isOpen ? 'navMenu' : 'navMenu close'} onClick={showMenu}>
-       
           <NavLink activeclassname="active" to="/Homepage">Home</NavLink>
           <NavLink activeclassname="active" to="/Works" >Works</NavLink>
           <NavLink activeclassname="active" to="/Events">Events</NavLink>
@@ -104,7 +96,7 @@ const Header = ({theme,setTheme}) => {
           </AnimatePresence>
         </div>
 
-        <div ref={scope}  class="menu_icon">
+        <div ref={scope}>
           <MenuToggle toggle={() => setIsOpen(!isOpen)} />
         </div> 
       
