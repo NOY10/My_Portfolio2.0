@@ -1,35 +1,34 @@
-header{
-    position: sticky;
-    top:0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    z-index: 999;
-    padding: 2px 10px;
-    background-color: var(--paradiv);
-    backdrop-filter: blur(6px);
-    color: var(--text-primary);
-    width: 100%;
+header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 999;
+  padding: 2px 10px;
+  background-color: var(--paradiv);
+  backdrop-filter: blur(6px);
+  color: var(--text-primary);
+  width: 100%;
 }
 
-header > .navMenu{
-  display:flex;
+header > .navMenu {
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header > .navMenu a{
- margin: 5px;
- padding: 5px;
- cursor: pointer;
- color: var(--text-primary);
- display: flex;
- align-items: center;
- text-decoration: none;
- padding: 0 1rem;
- height: 100%;
- cursor: pointer;
-
+header > .navMenu a {
+  margin: 5px;
+  padding: 5px;
+  cursor: pointer;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
 }
 .navMenu a:hover {
   background-color: var(--text-primary);
@@ -37,80 +36,74 @@ header > .navMenu a{
   color: var(--background);
   transition: all 0.5s ease-in-out;
 }
-.menu_icon{
+.menu_icon {
   display: none;
   color: #fff;
 }
 
-.navMenu .active{
+.navMenu .active {
   background-color: var(--text-primary);
   border-radius: 2px;
   color: var(--background);
- }
-
- 
-.header_left{
-    display: flex;
-    align-items: center;
 }
-.header_left > img{
-    object-fit: contain;
-    height: 40px;
-    padding: 7px;
-    
+
+.header_left {
+  display: flex;
+  align-items: center;
+}
+.header_left > img {
+  object-fit: contain;
+  height: 40px;
+  padding: 7px;
 }
 button {
-  overflow: hidden; 
-  background-color: var(--background-color); 
-  border: none;  
- 
+  overflow: hidden;
+  background-color: var(--background-color);
+  border: none;
 }
 
-  @media screen and (max-width: 768px) {
-    header > .navMenu{
-      flex-direction: column;
-      position: absolute;
-      background-color: var(--background);
-      padding: 10px 15px;
-      right: -40px;
-      top:64px;
-      transition: all 0.5s ease-in-out;
-    }
-
-    .navMenu a{
-      margin-bottom: 30px;
-      width: 100%;
-      text-align: center;
-      align-items: center;
-    }
-    .menu_icon{
-      display: flex;
-      align-items: center;
-      padding: 9px;
-      justify-content: center;
-      border-radius: 99px;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--text-primary);
-      transition: all 0.2s ease-in-out;
+@media screen and (max-width: 768px) {
+  header > .navMenu {
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--background);
+    padding: 10px 15px;
+    right: -40px;
+    top: 64px;
+    transition: all 0.5s ease-in-out;
   }
-    .navMenu.close {
-      right: -100%;
-      transition: all 0.5s ease-in-out;
-      text-align: center;
-    }
 
-    .header_left{
+  .navMenu a {
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .menu_icon {
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    justify-content: center;
+    border-radius: 99px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: all 0.2s ease-in-out;
+  }
+  .navMenu.close {
+    right: -100%;
+    transition: all 0.5s ease-in-out;
+    text-align: center;
+  }
+
+  .header_left {
     margin-right: auto;
-    }
-    
   }
+}
 
 .icon {
   color: black;
   padding: 10px;
   border-radius: 6px;
   background-color: var(--anime);
-
-  
 }
